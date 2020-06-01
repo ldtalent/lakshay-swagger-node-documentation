@@ -20,7 +20,7 @@ Step 3. Install all the dependencies
 Step 4. Run the app 
 ``` node server.js ```
 
-### The app will start running on port 3000 by default
+### The app will start running on port 3000 by default, open /api-docs to view the swagger UI
 
 # Final Look after everything is set: 
 <p align = "center" >
