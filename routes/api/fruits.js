@@ -28,7 +28,7 @@ router.get('/fruits', async(req, res) => {
       fruits
     })
   } catch (err) {
-    res.status(500).send('Server error')
+    res.status(500).json({'error':"Server error"})
   }
 })
 
@@ -69,7 +69,7 @@ router.get('/fruits/:_id', async(req, res) => {
     }
   } catch (err) {
     console.log(err)
-    res.status(500).send('Server error')
+    res.status(500).json({'error':"Server error"})
   }
 })
 
@@ -110,7 +110,7 @@ router.post('/fruits', async(req, res) => {
       return res.json({'message':'Enter the name of the fruit in the body'})
     }
   } catch (err) {
-    res.status(500).send('Server Error')
+    res.status(500).json({'error':"Server error"})
   }
 
 })
@@ -160,7 +160,7 @@ router.put('/fruits/:_id', async(req, res) => {
 
 
   } catch (err) {
-    res.status(500).send('Server error');
+    res.status(500).json({'error':"Server error"})
   }
 })
 
