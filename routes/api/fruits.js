@@ -65,7 +65,7 @@ router.get('/fruits/:_id', async(req, res) => {
     if (fruit) {
       return res.json(fruit)
     } else {
-      return res.send(`No fruit with the ${objectId} ID is present in the database`)
+      return res.json({'message':`No fruit with the ${objectId} ID is present in the database`})
     }
   } catch (err) {
     console.log(err)
@@ -105,9 +105,9 @@ router.post('/fruits', async(req, res) => {
         "name": name
       })
       fruit.save();
-      return res.send(`Added ${name} to the DB`)
+      return res.json({'message':`Added ${name} to the DB`})
     } else {
-      return res.send('Enter the name of the fruit in the body')
+      return res.json({'message':'Enter the name of the fruit in the body'})
     }
   } catch (err) {
     res.status(500).send('Server Error')
@@ -155,7 +155,7 @@ router.put('/fruits/:_id', async(req, res) => {
       })
 
     } else {
-      res.send('Check your inputs!!')
+      res.json({'message':'Check your inputs!!'})
     }
 
 
@@ -199,11 +199,11 @@ router.delete('/fruits/:_id', async(req, res) => {
         "status": "Successfully deleted"
       })
     } else {
-      return res.send(`No fruit with ${objectId} ID exists in the database`)
+      return res.json({'message':`No fruit with ${objectId} ID exists in the database`})
     }
 
   } catch (err) {
-    res.status(500).send("Server error")
+    res.status(500).json({'error':"Server error"})
   }
 
 })
