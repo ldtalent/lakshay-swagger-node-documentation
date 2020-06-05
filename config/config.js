@@ -5,7 +5,7 @@ process.env.PORT = process.env.PORT || 3000
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
 //DB
-const devDB = 'mongodb+srv://lakshay:rcLtN8oRBYQosZQ0@cluster0-loriq.mongodb.net/test?retryWrites=true&w=majority'
+const devDB = /*'mongodb+srv://lakshay:rcLtN8oRBYQosZQ0@cluster0-loriq.mongodb.net/test?retryWrites=true&w=majority'*/'YOUR URL HERE'
 
 let urlDB = process.env.NODE_ENV === 'dev' ? devDB : process.env.URLDB
 
